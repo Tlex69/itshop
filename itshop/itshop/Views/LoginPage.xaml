@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="itshop.LoginPage"
+             Title="Login">
+
+    <!-- ใช้ภาพจาก drawer เป็นพื้นหลัง -->
+    <ContentPage.BackgroundImageSource>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="Android" Value="drawable/log1.png"/>
+        </OnPlatform>
+    </ContentPage.BackgroundImageSource>
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+
+        <!-- เพิ่มช่องว่างระหว่างด้านบนและข้อความ Login -->
+        <BoxView HeightRequest="130" />
+
+        <Label Text="LOGIN"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="#004aad" 
+               HorizontalOptions="Center" />
+
+        <!-- กรอบข้อความ Username -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="UsernameEntry" 
+                   Placeholder="Username" 
+                   PlaceholderColor="#A9A9A9" 
+                   TextColor="#1C1C1C" 
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- กรอบข้อความ Password -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   PlaceholderColor="#A9A9A9"
+                   TextColor="#1C1C1C" 
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- ปุ่ม Login -->
+        <Button Text="Login" 
+                Clicked="OnLoginClicked" 
+                BackgroundColor="#004aad"
+                TextColor="White" 
+                FontSize="18"
+                CornerRadius="10" 
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="300" />
+
+        <!-- ปุ่ม Register -->
+        <Button Text="Register"
+                Clicked="OnRegisterClicked"
+                BackgroundColor="Transparent"
+                BorderColor="#004aad"
+                TextColor="#004aad"
+                FontSize="18"
+                BorderWidth="2"
+                CornerRadius="10" 
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="300" />
+    </StackLayout>
+</ContentPage>

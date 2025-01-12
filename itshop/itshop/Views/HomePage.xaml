@@ -1,0 +1,164 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="itshop.Views.HomePage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+
+                <!-- Header Section -->
+                <Grid Padding="10" BackgroundColor="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Menu Icon -->
+                    <ImageButton 
+                        Source="menu.png"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        BackgroundColor="White"
+                        Grid.Column="0" />
+
+                    <!-- Logo -->
+                    <Label 
+                        Text="I3SHOP"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        TextColor="#004aad"
+                        Grid.Column="1" />
+
+                    <!-- Cart and Profile Icons -->
+                    <StackLayout Orientation="Horizontal" Grid.Column="2">
+                        <ImageButton 
+                            Source="shop.png"
+                            WidthRequest="24"
+                            HeightRequest="24"
+                            BackgroundColor="White" />
+                        <ImageButton 
+                            Source="user.png"
+                            WidthRequest="24"
+                            HeightRequest="24"
+                            BackgroundColor="White" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Search Section -->
+                <Grid Padding="5" Margin="12,5,12,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Search Entry with Frame for Border -->
+                    <Frame HasShadow="False" CornerRadius="10" Padding="4" BackgroundColor="#EDEDED" VerticalOptions="Center" Grid.Column="0" WidthRequest="220">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Entry Placeholder=" Search..?" VerticalOptions="Center" TextColor="Black" FontSize="15" HorizontalOptions="FillAndExpand" />
+                            <ImageButton Source="search.png" WidthRequest="24" HeightRequest="18" VerticalOptions="Center" BackgroundColor="#EDEDED" HorizontalOptions="End" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <!-- Banner Image -->
+                <Frame HasShadow="True" Padding="0" CornerRadius="12" BorderColor="Black" BackgroundColor="White" WidthRequest="370" HeightRequest="180">
+                    <Image Source="EDED.png" WidthRequest="370" HeightRequest="180" Aspect="AspectFill" />
+                </Frame>
+
+                <!-- Horizontal StackLayout for Cards (no scroll) -->
+                <StackLayout Orientation="Horizontal" Padding="15" Spacing="10">
+                    <!-- Card 1 -->
+                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="as.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Accessories" HorizontalOptions="Center" FontSize="13" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 2 -->
+                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="ca.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Camera" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 3 -->
+                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="185" HeightRequest="125">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="lap.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Laptop" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 4 -->
+                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="ip.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Smart phone" HorizontalOptions="Center" FontSize="12" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="20" HorizontalOptions="FillAndExpand">
+                    <!-- New Product Label -->
+                    <Label Text="New Product" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start" />
+
+                    <!-- View All Label -->
+                    <Label Text="View All >" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <!-- New Cards Section with 2 Rows and 2 Columns -->
+                <Grid Padding="15" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Card 5 -->
+                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="as.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Accessories" HorizontalOptions="Center" FontSize="13" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 6 -->
+                    <Frame Grid.Row="0" Grid.Column="1" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="ca.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Camera" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 7 -->
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="lap.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Laptop" HorizontalOptions="Center" FontSize="14" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 8 -->
+                    <Frame Grid.Row="1" Grid.Column="1" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="ip.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Smart phone" HorizontalOptions="Center" FontSize="12" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

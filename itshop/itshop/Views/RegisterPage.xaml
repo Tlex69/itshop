@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="itshop.RegisterPage"
+             Title="Register">
+
+    <!-- ใช้ภาพจาก drawer เป็นพื้นหลัง -->
+    <ContentPage.BackgroundImageSource>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="Android" Value="drawable/regis1.png"/>
+        </OnPlatform>
+    </ContentPage.BackgroundImageSource>
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+
+        <!-- เพิ่มช่องว่างระหว่างด้านบนและข้อความ Register -->
+        <BoxView HeightRequest="5" />
+
+        <Label Text="Register"
+               FontSize="34"
+               FontAttributes="Bold"
+               TextColor="#004aad" 
+               HorizontalOptions="Center" />
+
+        <!-- กรอบข้อความ Username -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="UsernameEntry" 
+                   Placeholder="Username" 
+                   PlaceholderColor="#A9A9A9" 
+                   TextColor="#1C1C1C" 
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- กรอบข้อความ Email -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="EmailEntry" 
+                   Placeholder="Email" 
+                   PlaceholderColor="#A9A9A9" 
+                   TextColor="#1C1C1C" 
+                   Keyboard="Email"
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- กรอบข้อความ Password -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   PlaceholderColor="#A9A9A9"
+                   TextColor="#1C1C1C" 
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- กรอบข้อความ Confirm Password -->
+        <Frame HasShadow="True" BorderColor="#D1D1D1" BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Entry x:Name="ConfirmPasswordEntry" 
+                   Placeholder="Confirm Password" 
+                   IsPassword="True" 
+                   PlaceholderColor="#A9A9A9"
+                   TextColor="#1C1C1C" 
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="300" />
+        </Frame>
+
+        <!-- ปุ่ม Submit -->
+        <Button Text="Submit" 
+                Clicked="OnSubmitClicked" 
+                BackgroundColor="#004aad"
+                TextColor="White" 
+                FontSize="18"
+                Padding="12"
+                CornerRadius="10" 
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="300" />
+
+        <!-- ปุ่ม Back to Login -->
+        <Button Text="Back to Login"
+                Clicked="OnBackToLoginClicked"
+                BackgroundColor="Transparent"
+                BorderColor="#004aad"
+                TextColor="#004aad"
+                FontSize="18"
+                Padding="12"
+                BorderWidth="2"
+                CornerRadius="10" 
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="300" />
+    </StackLayout>
+</ContentPage>

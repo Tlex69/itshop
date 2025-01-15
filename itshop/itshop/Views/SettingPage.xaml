@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="itshop.Views.SettingPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Title -->
+            <Label Text="Settings"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+
+            <!-- Option for Language -->
+            <Button Text="Change Language"
+                    Clicked="OnChangeLanguageClicked"
+                    HorizontalOptions="FillAndExpand" />
+
+            <!-- Option for Notifications -->
+            <Switch x:Name="NotificationsSwitch" 
+                    IsToggled="True" 
+                    HorizontalOptions="Start"
+                    />
+            <Label Text="Enable Notifications"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+
+            <!-- Option for Account Settings -->
+            <Button Text="Account Settings"
+                    Clicked="OnAccountSettingsClicked"
+                    HorizontalOptions="FillAndExpand" />
+
+            <!-- Option for Logout -->
+            <Button Text="Logout"
+                    Clicked="OnLogoutClicked"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Red"
+                    TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -17,11 +17,12 @@
 
                     <!-- Menu Icon -->
                     <ImageButton 
-                        Source="menu.png"
-                        WidthRequest="24"
-                        HeightRequest="24"
-                        BackgroundColor="White"
-                        Grid.Column="0" />
+    Source="menu.png"
+    WidthRequest="24"
+    HeightRequest="24"
+    BackgroundColor="White"
+    Grid.Column="0"
+    Clicked="OnMenuButtonClicked" />
 
                     <!-- Logo -->
                     <Label 
@@ -36,15 +37,19 @@
                     <!-- Cart and Profile Icons -->
                     <StackLayout Orientation="Horizontal" Grid.Column="2">
                         <ImageButton 
-                            Source="shop.png"
-                            WidthRequest="24"
-                            HeightRequest="24"
-                            BackgroundColor="White" />
+    Source="shop.png"
+    WidthRequest="24"
+    HeightRequest="24"
+    BackgroundColor="White"
+    Clicked="OnCartClicked" />
+                        <!-- Profile Icon -->
                         <ImageButton 
-                            Source="user.png"
-                            WidthRequest="24"
-                            HeightRequest="24"
-                            BackgroundColor="White" />
+    Source="user.png"
+    WidthRequest="24"
+    HeightRequest="24"
+    BackgroundColor="White"
+    Clicked="OnProfileClicked" />
+
                     </StackLayout>
                 </Grid>
 

@@ -2,21 +2,47 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace itshop.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
         public HomePage()
         {
             InitializeComponent();
         }
+        // เมื่อกดที่ไอคอนโปรไฟล์
 
-        private void MenuButton_Clicked(object sender, EventArgs e)
+        private async void OnProfileClicked(object sender, EventArgs e)
         {
-            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            // นำทางไปยังหน้า ProfilePage
+            await Navigation.PushAsync(new ProfilePage());
+        }
+        private async void OnCartClicked(object sender, EventArgs e)
+        {
+            // Navigate to the Cart Page (replace CartPage with your actual Cart page class)
+            await Navigation.PushAsync(new CartPage());
+        }
+
+        private async void OnMenuButtonClicked(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Menu", "Cancel", null,
+                "Home", "Settings", "Logout");
+
+            switch (action)
             {
-                masterDetailPage.IsPresented = !masterDetailPage.IsPresented; // Toggle Flyout
+                case "Home":
+                    await Navigation.PushAsync(new HomePage());
+                    break;
+                case "Settings":
+                    await Navigation.PushAsync(new SettingPage());
+                    break;
+                case "Logout":
+                  
+                    await Navigation.PopToRootAsync();
+                    break;
+                default:
+                    break;
             }
         }
     }

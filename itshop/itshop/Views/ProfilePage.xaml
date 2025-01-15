@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="itshop.Views.ProfilePage"
+             BackgroundColor="#5b8ed2">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <!-- Profile Picture Section -->
+                <StackLayout HorizontalOptions="Center">
+                    <Frame HasShadow="True" CornerRadius="95" Padding="5" BackgroundColor="White" WidthRequest="160" HeightRequest="160">
+                        <Image Source="p.jpg" Aspect="AspectFill" />
+                    </Frame>
+                </StackLayout>
+
+                <!-- Username -->
+                <Label Text="John Doe"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#fff" />
+
+                <!-- Edit Profile Button -->
+                <Button Text="Edit Profile"
+                        BackgroundColor="#004aad"
+                        TextColor="White"
+                        BorderRadius="25"
+                        HeightRequest="45"
+                        HorizontalOptions="Center"
+                        Clicked="OnEditProfileClicked" />
+
+                <!-- Account Settings Section -->
+                <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,20" />
+                <Label Text="Account Settings"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       TextColor="#fff" />
+
+                <!-- Settings Items -->
+                <StackLayout Padding="5" Spacing="10">
+                    <Frame CornerRadius="10" Padding="5" BorderColor="#004aad" HasShadow="False">
+                        <Button Text="Change Password"
+                                BackgroundColor="Transparent"
+                                TextColor="#004aad"
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="OnChangePasswordClicked" />
+                    </Frame>
+
+                    <!-- Logout Button -->
+                    <Frame CornerRadius="10" Padding="5" BorderColor="#FF0000" HasShadow="False">
+                        <Button Text="Logout"
+                                BackgroundColor="Transparent"
+                                TextColor="#FF0000"
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="OnLogoutClicked" />
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

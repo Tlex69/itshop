@@ -1,7 +1,8 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="itshop.Views.HomePage"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
 
@@ -75,46 +76,65 @@
                 </Frame>
 
                 <!-- Horizontal StackLayout for Cards (no scroll) -->
-                <StackLayout Orientation="Horizontal" Padding="15" Spacing="10">
-                    <!-- Card 1 -->
-                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
-                        <StackLayout Padding="5" VerticalOptions="Center">
-                            <Image Source="as.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
-                            <Label Text="Accessories" HorizontalOptions="Center" FontSize="13" />
-                        </StackLayout>
-                    </Frame>
+                <ScrollView Orientation="Horizontal" Padding="15">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <!-- Card 1 -->
+                        <Frame HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAccessoriesTapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Padding="5" VerticalOptions="Center">
+                                <Image Source="as.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                                <Label Text="Accessories" HorizontalOptions="Center" FontSize="13" />
+                            </StackLayout>
+                        </Frame>
 
-                    <!-- Card 2 -->
-                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
-                        <StackLayout Padding="5" VerticalOptions="Center">
-                            <Image Source="ca.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
-                            <Label Text="Camera" HorizontalOptions="Center" FontSize="14" />
-                        </StackLayout>
-                    </Frame>
+                        <!-- Card 2 -->
+                        <Frame HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCameraTapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Padding="5" VerticalOptions="Center">
+                                <Image Source="ca.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                                <Label Text="Camera" HorizontalOptions="Center" FontSize="14" />
+                            </StackLayout>
+                        </Frame>
 
-                    <!-- Card 3 -->
-                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="185" HeightRequest="125">
-                        <StackLayout Padding="5" VerticalOptions="Center">
-                            <Image Source="lap.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
-                            <Label Text="Laptop" HorizontalOptions="Center" FontSize="14" />
-                        </StackLayout>
-                    </Frame>
+                        <!-- Card 3 -->
+                        <Frame HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="185" HeightRequest="125">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLaptopTapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Padding="5" VerticalOptions="Center">
+                                <Image Source="lap.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                                <Label Text="Laptop" HorizontalOptions="Center" FontSize="14" />
+                            </StackLayout>
+                        </Frame>
 
-                    <!-- Card 4 -->
-                    <Frame HasShadow="True" Padding="0" CornerRadius="12"  BackgroundColor="White" WidthRequest="180" HeightRequest="100">
-                        <StackLayout Padding="5" VerticalOptions="Center">
-                            <Image Source="ip.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
-                            <Label Text="Smart phone" HorizontalOptions="Center" FontSize="12" />
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
+                        <!-- Card 4 -->
+                        <Frame HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="180" HeightRequest="100">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSmartphoneTapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Padding="5" VerticalOptions="Center">
+                                <Image Source="ip.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
+                                <Label Text="Smart phone" HorizontalOptions="Center" FontSize="12" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+
 
                 <StackLayout Orientation="Horizontal" Padding="20" HorizontalOptions="FillAndExpand">
                     <!-- New Product Label -->
                     <Label Text="New Product" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start" />
 
                     <!-- View All Label -->
-                    <Label Text="View All >" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                    <Label Text="View All >" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnViewAllTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
 
                 <!-- New Cards Section with 2 Rows and 2 Columns -->
@@ -131,6 +151,9 @@
 
                     <!-- Card 5 -->
                     <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAccessoriesTapped" />
+                        </Frame.GestureRecognizers>
                         <StackLayout Padding="5" VerticalOptions="Center">
                             <Image Source="as.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
                             <Label Text="Accessories" HorizontalOptions="Center" FontSize="13" />
@@ -139,6 +162,9 @@
 
                     <!-- Card 6 -->
                     <Frame Grid.Row="0" Grid.Column="1" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCameraTapped" />
+                        </Frame.GestureRecognizers>
                         <StackLayout Padding="5" VerticalOptions="Center">
                             <Image Source="ca.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
                             <Label Text="Camera" HorizontalOptions="Center" FontSize="14" />
@@ -147,6 +173,9 @@
 
                     <!-- Card 7 -->
                     <Frame Grid.Row="1" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLaptopTapped" />
+                        </Frame.GestureRecognizers>
                         <StackLayout Padding="5" VerticalOptions="Center">
                             <Image Source="lap.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
                             <Label Text="Laptop" HorizontalOptions="Center" FontSize="14" />
@@ -155,6 +184,9 @@
 
                     <!-- Card 8 -->
                     <Frame Grid.Row="1" Grid.Column="1" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSmartphoneTapped" />
+                        </Frame.GestureRecognizers>
                         <StackLayout Padding="5" VerticalOptions="Center">
                             <Image Source="ip.jpg" WidthRequest="10" HeightRequest="60" Aspect="AspectFill" />
                             <Label Text="Smart phone" HorizontalOptions="Center" FontSize="12" />

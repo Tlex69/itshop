@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
 namespace itshop.Views
 {
     public partial class HomePage : ContentPage
@@ -11,34 +10,86 @@ namespace itshop.Views
         {
             InitializeComponent();
         }
-        // เมื่อกดที่ไอคอนโปรไฟล์
 
+        // เมื่อกดที่ไอคอนโปรไฟล์
         private async void OnProfileClicked(object sender, EventArgs e)
         {
-            // นำทางไปยังหน้า ProfilePage
-            await Navigation.PushAsync(new ProfilePage());
+            // ตรวจสอบว่าหน้าปัจจุบันไม่ใช่ ProfilePage
+            if (!(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1] is ProfilePage))
+            {
+                await Navigation.PushAsync(new ProfilePage());
+            }
         }
+
         private async void OnCartClicked(object sender, EventArgs e)
         {
-            // Navigate to the Cart Page (replace CartPage with your actual Cart page class)
-            await Navigation.PushAsync(new CartPage());
+            // ตรวจสอบว่าหน้าปัจจุบันไม่ใช่ CartPage
+            if (!(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1] is CartPage))
+            {
+                await Navigation.PushAsync(new CartPage());
+            }
         }
+
+        private async void OnAccessoriesTapped(object sender, EventArgs e)
+        {
+            // นำทางไปยังหน้า AccessoriesPage หรือแสดงข้อความ
+            await DisplayAlert("Tapped", "You tapped Accessories", "OK");
+        }
+
+        private async void OnCameraTapped(object sender, EventArgs e)
+        {
+            // นำทางไปยังหน้า CameraPage หรือแสดงข้อความ
+            await DisplayAlert("Tapped", "You tapped Camera", "OK");
+        }
+
+        private async void OnLaptopTapped(object sender, EventArgs e)
+        {
+            // นำทางไปยังหน้า LaptopPage หรือแสดงข้อความ
+            await DisplayAlert("Tapped", "You tapped Laptop", "OK");
+        }
+
+        private async void OnSmartphoneTapped(object sender, EventArgs e)
+        {
+            // นำทางไปยังหน้า SmartphonePage หรือแสดงข้อความ
+            await DisplayAlert("Tapped", "You tapped Smartphone", "OK");
+        }
+
+        private async void OnViewAllTapped(object sender, EventArgs e)
+        {
+            // นำทางไปยังหน้า ProductsPage
+            await Navigation.PushAsync(new ProductsPage());
+        }
+
 
         private async void OnMenuButtonClicked(object sender, EventArgs e)
         {
             string action = await DisplayActionSheet("Menu", "Cancel", null,
-                "Home", "Settings", "Logout");
+                "Home", "Products", "Settings", "Logout");
 
             switch (action)
             {
                 case "Home":
-                    await Navigation.PushAsync(new HomePage());
+                    // ตรวจสอบว่าหน้าปัจจุบันไม่ใช่ HomePage
+                    if (!(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1] is HomePage))
+                    {
+                        await Navigation.PushAsync(new HomePage());
+                    }
                     break;
                 case "Settings":
-                    await Navigation.PushAsync(new SettingPage());
+                    // ตรวจสอบว่าหน้าปัจจุบันไม่ใช่ SettingPage
+                    if (!(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1] is SettingPage))
+                    {
+                        await Navigation.PushAsync(new SettingPage());
+                    }
+                    break;
+                case "Products":
+                    // ตรวจสอบว่าหน้าปัจจุบันไม่ใช่ ProductsPage
+                    if (!(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1] is ProductsPage))
+                    {
+                        await Navigation.PushAsync(new ProductsPage());
+                    }
                     break;
                 case "Logout":
-                  
                     await Navigation.PopToRootAsync();
                     break;
                 default:

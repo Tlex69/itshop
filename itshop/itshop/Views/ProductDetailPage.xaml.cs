@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace itshop.Views
+
+namespace itshop
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductDetailPage : ContentPage
     {
-        public ProductDetailPage()
+        public ProductDetailPage(string v)
         {
             InitializeComponent();
         }

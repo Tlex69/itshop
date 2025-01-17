@@ -3,10 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="itshop.ProductDetailPage"
              Title="Product Details">
-    <StackLayout Padding="20">
+    <StackLayout Padding="20" Spacing="15" VerticalOptions="FillAndExpand">
         <Label Text="Product Details" 
                FontSize="24" 
-               HorizontalOptions="Center" />
-        <!-- Add your product details content here -->
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" />
+
+        <!-- รูปภาพสินค้า -->
+        <Image Source="as.jpg" 
+               HeightRequest="200" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" />
+
+        <!-- ชื่อสินค้า -->
+        <Label Text="Product Name" 
+               FontSize="20" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Start" 
+               VerticalOptions="Start" />
+
+        <!-- ราคา -->
+        <Label Text="Price: $99.99" 
+               FontSize="18" 
+               TextColor="Green" 
+               HorizontalOptions="Start" 
+               VerticalOptions="Start" />
+
+        <!-- รายละเอียดสินค้า -->
+        <Label Text="This is the product description. It provides details about the features, usage, and other important information about the product." 
+               FontSize="16" 
+               LineBreakMode="WordWrap" 
+               HorizontalOptions="Start" 
+               VerticalOptions="Start" />
+
+        <!-- Spacer เพื่อดันปุ่มลงล่าง -->
+        <BoxView HeightRequest="1" VerticalOptions="FillAndExpand" />
+
+        <!-- ปุ่มสั่งซื้อสินค้า -->
+        <Button Text="Buy Now" 
+                BackgroundColor="#FFCC00" 
+                TextColor="White" 
+                CornerRadius="10" 
+                HeightRequest="50" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="End"
+                Clicked="OnBuyNowClicked" />
     </StackLayout>
 </ContentPage>

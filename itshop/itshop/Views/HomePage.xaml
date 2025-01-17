@@ -150,18 +150,19 @@
                     </Grid.ColumnDefinitions>
 
                      <!-- Card 5 -->
-            <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnAccessoriesTapped" />
-                </Frame.GestureRecognizers>
-                <StackLayout Padding="5" VerticalOptions="Center">
-                    <Image Source="as.jpg" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
-                    <Label Text="Wireless Earbuds" HorizontalOptions="Center" FontSize="13" />
-                    <Label Text="$50" HorizontalOptions="Center" FontSize="12" TextColor="Green"/>
-                </StackLayout>
-            </Frame>
+                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAccessoriesTapped" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="5" VerticalOptions="Center">
+                            <Image Source="as.jpg" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                            <Label Text="Wireless Earbuds" HorizontalOptions="Center" FontSize="13" />
+                            <Label Text="$50" HorizontalOptions="Center" FontSize="12" TextColor="Green" />
+                        </StackLayout>
+                    </Frame>
 
-            <!-- Card 6 -->
+
+                    <!-- Card 6 -->
             <Frame Grid.Row="0" Grid.Column="1" HasShadow="True" Padding="0" CornerRadius="12" BackgroundColor="White" WidthRequest="140" HeightRequest="180">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCameraTapped" />

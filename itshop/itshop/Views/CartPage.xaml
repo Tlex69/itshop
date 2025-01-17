@@ -1,16 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="itshop.Views.CartPage"
-             BackgroundColor="White">
-    <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="10">
-            <Label Text="Your Cart" 
-                   FontSize="24" 
-                   FontAttributes="Bold" 
-                   TextColor="#004aad" 
-                   HorizontalOptions="Center" />
-            <!-- Add your cart items here -->
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="itshop.CartPage"
+             Title="Cart"
+             BackgroundColor="#F5F5F5">
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <!-- แสดงข้อความที่ตรงกลางข้างล่างสุด -->
+        <Label Text="Your Cart" 
+               FontSize="28" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" 
+               TextColor="#333" />
+
+        <!-- เส้นแบ่ง -->
+        <BoxView Color="#E0E0E0" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+        <!-- แสดงสินค้าในตะกร้า -->
+        <ListView x:Name="CartListView" 
+                  SeparatorColor="#E0E0E0"
+                  BackgroundColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" 
+                              Detail="{Binding Price}" 
+                              TextColor="#333" 
+                              DetailColor="#555"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- เส้นแบ่งอีกครั้ง -->
+        <BoxView Color="#E0E0E0" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+        <!-- ปุ่มชำระเงิน -->
+        <Button Text="Proceed to Payment" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="End" 
+                BackgroundColor="#4CAF50" 
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="25"
+                FontSize="18" />
+    </StackLayout>
 </ContentPage>
